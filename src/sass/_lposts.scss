@@ -1,0 +1,78 @@
+
+.insta{
+    padding-top: 38px;
+    padding-bottom: 42px;
+    &__controls{
+        @include flex-between;
+        margin-bottom: 13px;
+    }
+    &__link{
+     display: none;
+     font-weight: bold;
+     font-size: 13px;
+     line-height: 22px;
+     text-transform: uppercase;
+     color: $main-text;
+    }
+    &__title{
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: $main-text;
+    }
+    &__container{
+        display: flex;
+        gap: 10px;
+    }
+    &__img{
+        display: none;
+        width: 300px;
+    }
+    &__img:first-child{
+        display: block;
+    }
+}
+
+@media(min-width: $tab) {
+    .insta{
+     background-color: #f7f7f7;
+     padding: 47px 0;
+     &__wrapper{
+         @include margin-center;
+         max-width: 767px;
+     }
+     &__controls{
+        margin-bottom: 35px;
+     }
+     &__link{
+         display: block;
+     }
+     &__title{
+         font-size: 16px;
+     }
+     &__img:nth-child(1n):not(:last-child){
+         display: block;
+         width: 250px;
+     }
+    }
+}
+
+@media(min-width: $desktop){
+    .insta{
+        &__wrapper{
+            @include margin-center;
+            // max-width: $desktop;
+        }
+        &__container{
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+        }
+        &__img{
+        width: 200px !important;
+        }
+        &__img:last-child{
+            display: block;
+        }
+    }
+}

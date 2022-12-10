@@ -1,0 +1,54 @@
+
+.foot{
+    padding-top: 38px;
+    padding-bottom: 47px;
+    background-color: #000000;
+    text-align: center;
+    &__title{
+        color: $white-text;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 22px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+    &__text{
+        font-size: 12px;
+        line-height: 20px;
+        color: $lighter-text;
+        margin-bottom: 26px;
+        padding: 0 35px;
+        white-space: pre-line;
+        span{
+         display: none;
+        }
+    }
+    &__link{
+     margin-bottom: 36px;
+     display: flex;
+     justify-content: center;
+     gap: 5px;
+    }
+    &__contacts{
+    font-size: 14px;
+    line-height: 24px;
+    color: $lighter-text;
+    margin-top: 20px;
+    }
+}
+
+@media(min-width: $tab){
+    .foot{
+        padding: 57px 0;
+     &__text{
+        span{
+            display: inline;
+        }
+     }
+     &__conacts{
+         span{
+           display: none;
+         }
+     }
+    }
+}

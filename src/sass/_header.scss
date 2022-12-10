@@ -1,0 +1,91 @@
+.head{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 23px;
+    position: relative;
+    &__menu{
+        display: none;
+    }
+    &__menu--mobile{
+        display: flex;
+        flex-direction: column;
+        top: 100%;
+        left: 100%;
+        position: absolute;
+        min-width: 180px;
+        transform: translateX(-100%);
+    }
+    &__menu--mobile ~ &__nav--btn{
+     background-image: url("../img/menu-btn-op.svg");
+    }
+    &__link{
+        font-size: 11px;
+        line-height: 22px;
+        color: $main-text;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+        background-color: $menu-background;
+        padding: 4px 13px;   
+         &:hover{
+         background-color: #e5e5e5;
+        }
+        &--active{
+            color: $menu-active;
+        }
+    }
+    &__nav--btn{
+        border: none;
+        background-image: url("../img/menu-btn-cl.svg");
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+    }
+}
+
+.hero{
+    background-image: url("../img/intro-img.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 150px;
+    margin-bottom: 38px;
+}
+
+@media (min-width: $tab) {
+    .hero{
+     min-height: 360px;
+     margin-bottom: 56px;
+    }
+} 
+
+@media(min-width: $desktop){
+    .head{
+        max-width: 710px;
+                @include margin-center;
+        max-width: $tab;
+        margin-bottom: 0;
+        justify-content: space-between;
+        &__menu{
+            width: 100%;
+            justify-content: space-between;
+        }
+        &__link{
+            padding: 41px 0;
+            background-color: transparent;
+        }
+        &__link:hover{
+            background-color: transparent;
+        }
+        &__menu{
+            @include flex-between;
+            background-color: #ffffff;
+        }
+    }  
+       .head__nav--btn{
+        display: none;
+     }
+    .hero{
+        @include margin-center;
+        max-width: $desktop;
+    }
+}

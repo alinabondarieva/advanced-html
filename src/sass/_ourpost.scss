@@ -1,0 +1,74 @@
+
+.blog{
+    margin-bottom: 40px;
+    &__title{
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 22px;
+        color: $main-text;
+        text-transform: uppercase;
+        padding-bottom: 23px;
+    }
+    &__post{
+        margin-bottom: 28px;
+    }
+    &__post:last-child{
+        display: none;
+    }
+    &__subtitle{
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 30px;
+        color: $main-text;
+    }
+    &__comment{
+        font-size: 11px;
+        line-height: 20px;
+        color: $secondary-text;
+    }
+    &__text{
+        display: none;
+        font-size: 14px;
+        line-height: 26px;
+        color: $main-text;
+    }
+}
+
+@media(min-width: $tab){
+    .blog{
+     @include margin-center;
+     max-width: $tab;
+     &__title{
+         font-size: 16px;
+     }  
+     &__post{
+        display: flex;
+    }
+    &__post:last-child{
+        display: flex;
+    }
+    &__subtitle{
+        font-size: 16px;
+    }
+    &__comment{
+        font-size: 12px;
+    }
+    &__content{
+        padding-left: 20px;
+    }
+    &__text{
+        display: block;
+    }
+    }
+}
+
+@media(min-width: $desktop){
+    .blog{
+       max-width: $desktop;
+       &__container{
+        @include flex-between;
+        flex-wrap: wrap;
+        gap: 25px;
+       }
+    }
+}
